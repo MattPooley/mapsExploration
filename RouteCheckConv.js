@@ -1,4 +1,4 @@
-let googleKey = 'AIzaSyBdh-SfHucloBHQTnyLdwbJfmScUk0yFXI';
+let googleKey = require('googleKey');
 var googleMapsClient = require('@google/maps').createClient({key:googleKey});
 var asPromise = require('asPromise');
 
