@@ -1,6 +1,5 @@
-let googleKey = require('googleKey');
+var googleKey = require('./googleKey');
 var googleMapsClient = require('@google/maps').createClient({key:googleKey});
-var asPromise = require('asPromise');
 
 var weekday = new Array(7);
 weekday[0] =  "Sunday";
@@ -11,8 +10,8 @@ weekday[4] = "Thursday";
 weekday[5] = "Friday";
 weekday[6] = "Saturday";
 
-let originPt = '14964 SE Glenbrook Road, Clackamas, OR 97015'; 
-let destPt = 'Portland Convention Center, Portland, OR';
+var originPt = '14964 SE Glenbrook Road, Clackamas, OR 97015'; 
+var destPt = 'Portland Convention Center, Portland, OR';
 googleMapsClient.directions({
     origin: originPt,
     destination: destPt,
