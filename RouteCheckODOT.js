@@ -15,18 +15,20 @@ var destPt = '79 SE Taylor St, Portland, OR 97214';
 googleMapsClient.directions({
     origin: originPt,
     destination: destPt,
-    mode: 'driving'
+    mode: 'driving',
+    departure_time: 'now'
 }, function ( results, status) {
     var currentDate = new Date();
-    console.log('"To ODOT From Home",'+weekday[currentDate.getDay()]+','+currentDate.getHours()+':'+currentDate.getMinutes()+','+status.json.routes[0].legs[0].duration.value);
+    console.log('"To ODOT From Home",'+weekday[currentDate.getDay()]+','+currentDate.getHours()+':'+currentDate.getMinutes()+','+status.json.routes[0].legs[0].duration_in_traffic.value);
 });
 
 googleMapsClient.directions({
     origin: destPt,
     destination: originPt,
-    mode: 'driving'
+    mode: 'driving',
+    departure_time: 'now'
 }, function ( results, status) {
     var currentDate = new Date();
-    console.log('"From ODOT To Home",'+weekday[currentDate.getDay()]+','+currentDate.getHours()+':'+currentDate.getMinutes()+','+status.json.routes[0].legs[0].duration.value);
+    console.log('"From ODOT To Home",'+weekday[currentDate.getDay()]+','+currentDate.getHours()+':'+currentDate.getMinutes()+','+status.json.routes[0].legs[0].duration_in_traffic.value);
 });
 
